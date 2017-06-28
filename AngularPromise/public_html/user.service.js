@@ -12,7 +12,8 @@
 
   function userService($q, $http) {
     var self = this;
-
+        
+       //This is the previous way of writing promise
 //    self.getUsers = function() {
 //      var deferred = $q.defer();
 //      $http({
@@ -26,25 +27,28 @@
 //        });
 //      return deferred.promise;
         
-        self.getUsers = function() {
-      return $http.get('http://mocker.egen.io/users')
-        .then(function(response) {
-          return response.data;
-        }, function(error) {
-          console.log(error);
-        });
+       
+    self.getById = getUserById;
 
+    self.getUsers = function() {
+      return $http.get('http://mocker.egen.io/users')
+        .then(successFn, errorFn);
     };
+
+    //function can be written in any(above or below) way
     
-    self.getUserById = function(id) {
-      return $http.get('http://mocker.egen.io/users/' + id)
-        .then(function(response) {
-          return response.data;
-        }, function(error) {
-          return $q.reject(error);
-        });
-    };
-    
+    function getUserById(id) {
+      return $http.get('http://mocker.egen.io/users' + id)
+        .then(successFn, errorFn);
+    }
+
+    function successFn(response) {
+      return response.data;
+    }
+
+    function errorFn(error) {
+      return $q.reject(error);
+    }
   }
 
 })();
