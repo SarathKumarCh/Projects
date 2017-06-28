@@ -13,13 +13,19 @@
   function Car(userService) {
     var carVm = this;
 
-    carVm.user = userService.getUsers()
-      .then(function(response) {
-        console.log(response);
-      }, function(error) {
-        console.err(error);
-      });
-    console.log(carVm.user);
+    // userService.getUsers()
+    //   .then(function(response) {
+    //     console.log(response);
+    //   }, function(error) {
+    //     console.err(error);
+    //   });
+    
+    userService.getUserById('cba42480-057a-45aa-9914-f1a89fc735f5')
+    .then(function(response){
+      console.log(response);
+    }, function(error){
+      console.log(error);
+    });
 
     //$interval.cancel(timmer+1);
 
