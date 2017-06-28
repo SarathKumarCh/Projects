@@ -7,7 +7,7 @@ and open the template in the editor.
 
 <div id="userDetails">
   <h2>{{user.name}}</h2>
-  <img ng-src="https://www.gravatar.com/avatar/{{user.gravatar_id}}" title="{{user.name}}">
+  <img ng-src="{{user.avatar_url}}" title="{{user.name}}">
   <br/>
   <br/>
   <select ng-model="repoSortOrder">
@@ -17,7 +17,7 @@ and open the template in the editor.
   </select>
 </div>
 
-<table>
+<table class="table table-striped">
   <thead>
     <tr>
       <th>Name</th>
