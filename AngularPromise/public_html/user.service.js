@@ -13,23 +13,38 @@
   function userService($q, $http) {
     var self = this;
 
-    self.getUsers = function() {
-      var deferred = $q.defer();
-
-      $http({
-          method: 'GET',
-          url: 'http://mocker.egen.io/users'
-        })
+//    self.getUsers = function() {
+//      var deferred = $q.defer();
+//      $http({
+//          method: 'GET',
+//          url: 'http://mocker.egen.io/users'
+//        })
+//        .then(function(response) {
+//          deferred.resolve(response.data);
+//        }, function(error) {
+//          console.log(error);
+//        });
+//      return deferred.promise;
+        
+        self.getUsers = function() {
+      return $http.get('http://mocker.egen.io/users')
         .then(function(response) {
-
-          deferred.resolve(response.data);
-
+          return response.data;
         }, function(error) {
           console.log(error);
         });
 
-      return deferred.promise;
     };
+    
+    self.getUserById = function(id) {
+      return $http.get('http://mocker.egen.io/users/' + id)
+        .then(function(response) {
+          return response.data;
+        }, function(error) {
+          return $q.reject(error);
+        });
+    };
+    
   }
 
 })();
