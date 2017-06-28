@@ -13,14 +13,14 @@
   function Car(userService) {
     var carVm = this;
 
-    // userService.getUsers()
-    //   .then(function(response) {
-    //     console.log(response);
-    //   }, function(error) {
-    //     console.err(error);
-    //   });
+    userService.getUsers()
+      .then(function(response) {
+        console.log(response);
+      }, function(error) {
+        console.err(error);
+      });
     
-    userService.getUserById('cba42480-057a-45aa-9914-f1a89fc735f5')
+    userService.getById('cba42480-057a-45aa-9914-f1a89fc735f5')
     .then(function(response){
       console.log(response);
     }, function(error){
