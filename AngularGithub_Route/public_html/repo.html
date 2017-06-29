@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+
+<h2>{{repo.name}}</h2>
+
+<div>
+  Issues: {{repo.open_issues_count}}
+</div>
+<div>
+  <ul>
+    <li ng-repeat = "user in repo.collaborators">
+      <img src="http:/www.gravatar.com/avatar/{{user.avatar_url}}" alt="{{user.login}}">
+      {{user.login}}
+      
+    </li>
+  </ul>
+</div>
+<br/>
+<a href="#/main"> Back to Search</a>
+<br/>
+<a href="#/user/{{repo.owner.login}}">Back to {{repo.owner.login}}</a>
