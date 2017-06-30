@@ -1,0 +1,24 @@
+<hr>
+<img ng-src="{{carVm.imageUrl}}">
+<hr>
+<table class="table">
+  <thead>
+    <tr>
+      <th>VIN</th>
+      <th>Make</th>
+      <th>Model</th>
+      <th>Year</th>
+      <th>Last Service Date</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr ng-repeat="car in carVm.cars" ng-class="{true: 'latest', false: ''}[car.year==2015]">
+      <td>{{car.vin}}</td>
+      <td>{{car.make}}</td>
+      <td>{{car.model}}</td>
+      <td>{{car.year}}</td>
+      <td>{{car.lastServiceDate}}</td>
+    </tr>
+  </tbody>
+</table>
