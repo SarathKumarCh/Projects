@@ -12,12 +12,20 @@
 
   function Car(userService) {
     var carVm = this;
+    
+    
+//    userService.deleteUser()
+//    .then(function(response){
+//      console.log(response);
+//    }, function(error){
+//      console.log(error);
+//    });
 
     userService.getUsers()
       .then(function(response) {
-        console.log(response);
+        carVm.users = response;
       }, function(error) {
-        console.err(error);
+        console.log(error);
       });
     
     userService.getById('cba42480-057a-45aa-9914-f1a89fc735f5')

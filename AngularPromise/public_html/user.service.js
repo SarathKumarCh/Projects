@@ -29,6 +29,27 @@
         
        
     self.getById = getUserById;
+    
+//    self.deleteUser = function(){
+//    return $http({
+//          method: 'DELETE',
+//          url: 'http://mocker.egen.io/users',
+//          data: {
+//              firstName: 'sarath',
+//              lastName: 'kumar'
+//          }
+//        })
+//        .then(successFn, errorFn);
+//    
+//    };
+//    
+//    self.deleteUser = function()       
+//      return $http.delete('http://mocker.egen.io/users', data)
+//        .then(successFn, errorFn);
+//        if(response.data){
+//            carVm.msg = 'Data deleted successfully'
+//        }
+//    };
 
     self.getUsers = function() {
       return $http.get('http://mocker.egen.io/users')
@@ -38,7 +59,7 @@
     //function can be written in any(above or below) way
     
     function getUserById(id) {
-      return $http.get('http://mocker.egen.io/users' + id)
+      return $http.get('http://mocker.egen.io/users/' + id)
         .then(successFn, errorFn);
     }
 
