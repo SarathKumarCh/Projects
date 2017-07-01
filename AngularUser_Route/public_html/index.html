@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html ng-app="plunker">
+
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="style.css" />
+  <script data-require="angular.js@*" data-semver="4.0.0" src="https://code.angularjs.org/latest/angular.min.js"></script>
+  <script data-require="angular-route@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular-route.js"></script>
+  <script src="app.module.js"></script>
+  <script src="user.service.js"></script>
+  <script src="UserListController.js"></script>
+  <Script src="UserDetailController.js"></Script>
+  <script src="addUserController.js"></script>
+  
+</head>
+
+<body>
+
+  <h1>Information about users</h1>
+  <ul class="nav nav-pills">
+    <li><a href="#/users">Users List</a></li>
+    <li><a href="#/add-user">Add User</a></li>
+
+  </ul>
+
+  <div ng-view></div>
+  
+
+</body>
+
+</html>

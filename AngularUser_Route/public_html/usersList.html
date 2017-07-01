@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<h1>User List</h1>
+
+<div>Number of users: {{userListVm.users.length}}</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Company</th>
+      <th>City, State</th>
+    </tr>
+  </thead>
+  
+  <tbody>
+    <tr ng-repeat = "user in userListVm.users">
+      <td><a ng-href="#/users/{{user.id}}"><img ng-src="{{user.profilePic}}"></a></td>
+      <td>{{user.firstName}} {{user.lastName}}</td>
+      <td>{{user.email}}</td>
+      <td>{{user.company.name}}</td>
+      <td>{{user.company.city}}, {{user.company.state}}</td>
+      
+    </tr>
+  </tbody>
+</table>

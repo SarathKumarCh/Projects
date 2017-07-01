@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<h1>Details of {{userDetailVm.user.firstName}} {{userDetailVm.user.lastName}} are below </h1>
+
+<div id="info">
+<img id="user" ng-src="{{userDetailVm.user.profilePic}}" />
+
+<h2> Name: {{userDetailVm.user.firstName}} {{userDetailVm.user.lastName}}</h2>
+
+<h3> Company Name: {{userDetailVm.user.company.name}}</h3>
+
+<h3> Email Address: {{userDetailVm.user.email}}</h3>
+
+<h3> Address: {{userDetailVm.user.address.street}}, {{userDetailVm.user.address.city}}, {{userDetailVm.user.address.state}} {{userDetailVm.user.address.zip}}</h3>
+
+</div>

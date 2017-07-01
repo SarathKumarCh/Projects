@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<h1>Add User</h1>
+
+<form class="form-inline" ng-submit="addUserVm.addUser()">
+            <div class="form-group">
+              <label for="firsName">First Name</label><br/>              
+              <input type="text" ng-model="addUserVm.newUser.firstName"
+              class="form-control" required id="firstName" placeholder="First Name">
+            </div>
+    
+            <div class="form-group">
+              <label for="firsName">Last Name</label><br/>
+              <input type="text" ng-model="addUserVm.newUser.lastName"
+              class="form-control" required id="lastName" placeholder="Last Name">
+            </div>
+    <br/> 
+    <br/>
+            <div class="form-group">
+              <label for="email">Email Id</label><br/>
+              <input type="email" ng-model="addUserVm.newUser.email"
+              class="form-control" required id="email" placeholder="Someone@mail.com">
+            </div>
+    <br/>
+    <br/>
+            <div class="form-group">
+              <label for="company">Company Name</label><br/>
+              <input type="text" ng-model="addUserVm.newUser.company.name"
+              class="form-control" required id="company" placeholder="Company Name">
+            </div>
+    <br/>
+    <br/>
+            <div class="form-group">
+              <label for="Street">Address</label><br/>
+              <input type="text" ng-model="addUserVm.newUser.address.street"
+              class="form-control" required id="street" placeholder="Street">
+            </div>
+    <br/>
+    <br/>
+            <div class="form-group">
+              <label for="city">City</label><br/>
+              <input type="text" ng-model="addUserVm.newUser.address.city"
+              class="form-control" required id="city" placeholder="City">
+            </div>
+    
+            <div class="form-group">
+              <label for="state">State</label><br/>
+              <input type="text" ng-model="addUserVm.newUser.address.state"
+              class="form-control" required id="state" placeholder="State">
+            </div>
+    <br/>
+    <br/>
+            <div class="form-group">
+              <label for="country">Country</label><br/>
+              <input type="text" ng-model="addUserVm.newUser.address.country"
+              class="form-control" required id="country" placeholder="Country">
+            </div>
+    
+            <div class="form-group">
+              <label for="zip">City</label><br/>
+              <input type="number" ng-model="addUserVm.newUser.address.zip"
+              class="form-control" required id="zip" placeholder="Zip">
+            </div>
+    <br/>
+    <br/>
+            <div class="form-group">
+              <button type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-primary">Reset</button>
+            </div>
+          </form>
