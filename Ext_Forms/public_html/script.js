@@ -111,9 +111,26 @@ Ext.onReady(function() {
                anchor: '100%',
                buttonText: 'Select File...'
             },{
-                xtype: 'button',
-                text: 'Submit Application'
+                alert: Ext.create('Ext.Button', {
+                renderTo: Ext.getElementById('msgBox'),
+                text: 'Submit Application',
+                listeners: {
+                click: function() {
+                  Ext.MessageBox.confirm('Confirm', 'Are you sure you want to submit Application ?', callbackFunction);
+                  function callbackFunction(btn){
+                  if(btn == 'yes') {
+                     Ext.Msg.alert ('Button Click', 'Your Application has bee submitted');
+                     Ext.onReady();
+                  } else {
+                     Ext.Msg.alert ('Button Click', 'Your application is not submitted');
+                  }
+                     
+                  };
+               }
+               
+            }
+         })
                 
-            }]
+         }]
          });
       });
